@@ -1,4 +1,6 @@
-const backendDomain = "http://localhost:8080"
+// const backendDomain = "http://localhost:8080"
+
+const backendDomain = "https://vijaymobileshop.onrender.com"
 
 const SummaryApi = {
     signUp: {
