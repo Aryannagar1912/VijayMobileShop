@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-slate-100;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+
+@media (max-width: 768px) { /* Adjust the max-width as per your mobile breakpoint */
+  h2.relative {
+    display: none;
+  }
+}
