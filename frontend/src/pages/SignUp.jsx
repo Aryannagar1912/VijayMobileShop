@@ -53,7 +53,7 @@ const SignUp = () => {
         toast.error(dataApi.message);
       }
     } else {
-      toast.error("password not same"); 
+      toast.error("password not same");
     }
   };
 

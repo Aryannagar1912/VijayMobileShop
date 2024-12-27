@@ -3,7 +3,7 @@ import fetchCategoryWiseProduct from "../helpers/fetchCategoryWiseProduct";
 import displayCurrency from "../helpers/displayCurrency";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
-const HorizontalCardProduct = ({ category, heading }) => {
+const VerticalCardProduct = ({ category, heading }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const loadingList = new Array(13).fill(null);
@@ -49,7 +49,7 @@ const HorizontalCardProduct = ({ category, heading }) => {
       <h2 className="text-2xl font-semibold py-4">{heading}</h2>
 
       <div
-        className="flex items-center gap-4 md:gap-6 overflow-scroll scrollbar-none transition-all"
+        className="flex items-center gap-4 md:gap-6 overflow-x-scroll scrollbar-none transition-all"
         ref={scrollElement}
       >
         <button
@@ -66,14 +66,14 @@ const HorizontalCardProduct = ({ category, heading }) => {
         </button>
         {data.map((product, index) => {
           return (
-            <div className="w-full min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] h-36 bg-white rounded-sm shadow flex">
-              <div className="bg-slate-200 h-full p-4 min-w-[120px] md:min-w-[145px]">
+            <div className="w-full min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] bg-white rounded-sm shadow">
+              <div className="bg-slate-200 h-60 p-4 min-w-[280px] md:min-w-[145px] flex justify-center items-center">
                 <img
                   src={product.productImage[0]}
                   className="object-scale-down h-full hover:scale-110 transition-all mix-blend-multiply"
                 />
               </div>
-              <div className="p-4 grid">
+              <div className="p-4 grid gap-3">
                 <h2 className="font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-black">
                   {product?.productName}{" "}
                 </h2>
@@ -98,4 +98,4 @@ const HorizontalCardProduct = ({ category, heading }) => {
   );
 };
 
-export default HorizontalCardProduct;
+export default VerticalCardProduct;

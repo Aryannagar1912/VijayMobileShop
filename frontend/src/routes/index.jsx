@@ -20,15 +20,15 @@ const router = createBrowserRouter([
       },
       {
         path: "login",
-        element: <Login />
+        element: <Login />,
       },
       {
         path: "forget-password",
-        element: <ForgetPassword />
+        element: <ForgetPassword />,
       },
       {
         path: "sign-up",
-        element: <SignUp />
+        element: <SignUp />,
       },
       {
         path: "admin-panel",
@@ -36,17 +36,17 @@ const router = createBrowserRouter([
         children: [
           {
             path: "all-users",
-            element : <AllUsers />
+            element: <AllUsers />,
           },
           {
             path: "all-products",
-            element : <AllProducts />
-          }
-        ]
+            element: <AllProducts />,
+          },
+        ],
       },
       {
         path: "product-category/:categoryName",
-        element: <CategoryProduct />
+        element: <CategoryProduct />,
       },
     ],
   },

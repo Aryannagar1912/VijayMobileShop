@@ -25,8 +25,8 @@ const Footer = () => {
           <div className="mb-6 md:mb-0">
             <h4 className="text-lg font-semibold mb-2">Contact Us</h4>
             <p className="text-sm">
-              shop no.1, 2, Near Shiv Mandir, Bairagarh,
-              <br /> Bhopal, 462046
+              shop no.1, 2, Near Shiv Mandir, Chanchal Chouraha, Bairagarh,
+              <br /> Bhopal, 462030
             </p>
             <p className="text-sm">Phone: +91-9179280085</p>
             <p className="text-sm">Email: aryannagar193@gmail.com</p>
@@ -86,7 +86,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-
-
-

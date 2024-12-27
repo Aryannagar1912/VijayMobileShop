@@ -9,7 +9,7 @@ import SummaryApi from "../common";
 import { toast } from "react-toastify";
 import modelCategory from "../helpers/modelCategory";
 
-const UploadProduct = ({ onClose , fetchData}) => {
+const UploadProduct = ({ onClose, fetchData }) => {
   const [data, setData] = useState({
     productName: "",
     brandName: "",
@@ -21,16 +21,15 @@ const UploadProduct = ({ onClose , fetchData}) => {
     sellingPrice: "",
   });
 
-
   const [openFullScreenImage, setOpenFullScreenImage] = useState(false);
   const [fullScreenImage, setFullScreenImage] = useState("");
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setData((prev) => ({
-        ...prev,
-        [name]: value,
-        ...(name === "category" && { model : ""}),
+      ...prev,
+      [name]: value,
+      ...(name === "category" && { model: "" }),
     }));
   };
 
@@ -56,30 +55,30 @@ const UploadProduct = ({ onClose , fetchData}) => {
       return {
         ...prev,
         productImage: [...newProductImage],
-      }; 
+      };
     });
   };
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await fetch(SummaryApi.uploadProduct.url, {
       method: SummaryApi.uploadProduct.method,
-      credentials: 'include',
+      credentials: "include",
       headers: {
-        "content-type" : "application/json"
+        "content-type": "application/json",
       },
-      body: JSON.stringify(data)
-    })
-    const responseData = await response.json()
+      body: JSON.stringify(data),
+    });
+    const responseData = await response.json();
 
     if (responseData.success) {
-      toast.success(responseData?.message)
-      onClose()
-      fetchData()
+      toast.success(responseData?.message);
+      onClose();
+      fetchData();
     }
 
     if (responseData.error) {
-      toast.error(responseData?.message)
+      toast.error(responseData?.message);
     }
   };
   return (
@@ -135,9 +134,7 @@ const UploadProduct = ({ onClose , fetchData}) => {
             name="category"
             required
           >
-            <option value={""}>
-              Select Category
-            </option>
+            <option value={""}>Select Category</option>
             {productCategory.map((el, index) => {
               return (
                 <option value={el.value} key={el.value + index}>
@@ -146,8 +143,6 @@ const UploadProduct = ({ onClose , fetchData}) => {
               );
             })}
           </select>
-
-
 
           {/* Model Selector (conditional rendering) */}
           {(data.category === "Mobiles" || data.category === "Covers") && (
@@ -169,11 +164,10 @@ const UploadProduct = ({ onClose , fetchData}) => {
                       {el.label}
                     </option>
                   );
-                  })}
+                })}
               </select>
-          
-              </>
-            )}
+            </>
+          )}
 
           <label htmlFor="productImage" className="mt-3">
             Product Image :

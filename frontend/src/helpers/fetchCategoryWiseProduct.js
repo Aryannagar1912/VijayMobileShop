@@ -1,25 +1,23 @@
-import SummaryApi from "../common"
-
+import SummaryApi from "../common";
 
 const fetchCategoryWiseProduct = async (category) => {
-    
-    console.log("Category:", category);
-console.log("API URL:", SummaryApi.categoryWiseProduct.url);
+  console.log("Category:", category);
+  console.log("API URL:", SummaryApi.categoryWiseProduct.url);
 
-    const response = await fetch(SummaryApi.categoryWiseProduct.url, {
-        method: SummaryApi.categoryWiseProduct.method,
-        headers: {
-            "Content-Type" :"application/json"
-        },
-        body: JSON.stringify({
-            category : category
-        })
-    })
+  const response = await fetch(SummaryApi.categoryWiseProduct.url, {
+    method: SummaryApi.categoryWiseProduct.method,
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      category: category,
+    }),
+  });
 
-    console.log("Response status:", response.status);
-    const dataResponse = await response.json();
+  console.log("Response status:", response.status);
+  const dataResponse = await response.json();
 
-    return dataResponse
-}
+  return dataResponse;
+};
 
-export default fetchCategoryWiseProduct
+export default fetchCategoryWiseProduct;

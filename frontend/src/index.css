@@ -10,8 +10,8 @@ body {
   display: none;
 }
 
-
-@media (max-width: 768px) { /* Adjust the max-width as per your mobile breakpoint */
+@media (max-width: 768px) {
+  /* Adjust the max-width as per your mobile breakpoint */
   h2.relative {
     display: none;
   }

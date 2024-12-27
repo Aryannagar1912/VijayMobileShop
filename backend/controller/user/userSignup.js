@@ -1,56 +1,55 @@
-
 const bcrypt = require("bcryptjs");
 const userModel = require("../../models/userModel");
 
 async function userSignupController(req, res) {
-    try {
-        const { name, email, password } = req.body
-        
-        const user = await userModel.findOne({ email })
-        
-        if (user) {
-            throw new Error("user already exist")
-        }
+  try {
+    const { name, email, password } = req.body;
 
-        if (!email) {
-            throw new Error("please provide email")
-        }
-        if (!name) {
-            throw new Error("please provide name")
-        }
-        if (!password) {
-            throw new Error("please provide password")
-        }
+    const user = await userModel.findOne({ email });
 
-        const salt = bcrypt.genSaltSync(10);
-        const hashPassword = await bcrypt.hashSync(password, salt);
+    if (user) {
+      throw new Error("user already exist");
+    }
 
-        if (!hashPassword) {
-            throw new Error("something is wrong")
-        }
+    if (!email) {
+      throw new Error("please provide email");
+    }
+    if (!name) {
+      throw new Error("please provide name");
+    }
+    if (!password) {
+      throw new Error("please provide password");
+    }
 
-        const payload = {
-            ...req.body,
-            role: "GENERAL",
-            password: hashPassword,
-        }
+    const salt = bcrypt.genSaltSync(10);
+    const hashPassword = await bcrypt.hashSync(password, salt);
 
-        const userData = new userModel(payload)
-        const saveUser = await userData.save()
+    if (!hashPassword) {
+      throw new Error("something is wrong");
+    }
 
-        res.status(201).json({
-            data: saveUser,
-            success: true,
-            error: false,
-            message: "User created Successfully"
-        })
-    } catch (err) {
-        res.json({
-            message: err.message|| err ,
-            error: true,
-            success : false,
-        })
-   }
+    const payload = {
+      ...req.body,
+      role: "GENERAL",
+      password: hashPassword,
+    };
+
+    const userData = new userModel(payload);
+    const saveUser = await userData.save();
+
+    res.status(201).json({
+      data: saveUser,
+      success: true,
+      error: false,
+      message: "User created Successfully",
+    });
+  } catch (err) {
+    res.json({
+      message: err.message || err,
+      error: true,
+      success: false,
+    });
+  }
 }
 
 module.exports = userSignupController;

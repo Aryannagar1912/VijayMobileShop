@@ -53,8 +53,6 @@ const Login = () => {
     }
   };
 
-
-
   return (
     <section id="login">
       <div className="mx-auto container p-4">

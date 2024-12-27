@@ -28,8 +28,8 @@ const AllUsers = () => {
     email: "",
     name: "",
     role: "",
-    _id : "",
-  })
+    _id: "",
+  });
 
   useEffect(() => {
     fetchAllUsers();
@@ -63,8 +63,8 @@ const AllUsers = () => {
                   <button
                     className="bg-green-100 p-2 rounded-full cursor-pointer hover:bg-green-500 hover:text-white"
                     onClick={() => {
-                      setUpdateUserDetails(el)
-                      setOpenUpdateRole(true)
+                      setUpdateUserDetails(el);
+                      setOpenUpdateRole(true);
                     }}
                   >
                     <MdModeEdit />
@@ -82,7 +82,8 @@ const AllUsers = () => {
           email={updateUserDetails.email}
           role={updateUserDetails.role}
           userId={updateUserDetails._id}
-          callFunc={fetchAllUsers} />
+          callFunc={fetchAllUsers}
+        />
       )}
     </div>
   );
