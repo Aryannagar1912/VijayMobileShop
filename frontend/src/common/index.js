@@ -1,6 +1,6 @@
-// const backendDomain = "http://localhost:8080";
+const backendDomain = "http://localhost:8080";
 
-const backendDomain = "https://vijaymobileshop.onrender.com";
+// const backendDomain = "https://vijaymobileshop.onrender.com";
 // const backendDomain = "vijay-mobile-shop-backend.vercel.app"
 
 const SummaryApi = {
@@ -46,6 +46,10 @@ const SummaryApi = {
   },
   categoryWiseProduct: {
     url: `${backendDomain}/api/category-product`,
+    method: "post",
+  },
+  productDetails: {
+    url: `${backendDomain}/api/product-details`,
     method: "post",
   },
 };

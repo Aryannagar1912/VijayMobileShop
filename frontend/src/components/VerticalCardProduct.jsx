@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import fetchCategoryWiseProduct from "../helpers/fetchCategoryWiseProduct";
 import displayCurrency from "../helpers/displayCurrency";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+import addToCart from "../helpers/addToCart";
+import { Link } from "react-router-dom";
 
 const VerticalCardProduct = ({ category, heading }) => {
   const [data, setData] = useState([]);
@@ -96,7 +98,7 @@ const VerticalCardProduct = ({ category, heading }) => {
         ) : (
           data.map((product, index) => {
             return (
-              <div className="w-full min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] bg-white rounded-sm shadow">
+              <Link to={"product/"+product?._id} className="w-full min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] bg-white rounded-sm shadow">
                 <div className="bg-slate-200 h-60 p-4 min-w-[280px] md:min-w-[145px] flex justify-center items-center">
                   <img
                     src={product.productImage[0]}
@@ -116,11 +118,11 @@ const VerticalCardProduct = ({ category, heading }) => {
                       {displayCurrency(product?.price)}
                     </p>
                   </div>
-                  <button className="text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-0.5 rounded-full">
+                  <button className="text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-0.5 rounded-full" onClick={(e) => addToCart(e, product?._id)}>
                     Add to Cart
                   </button>
                 </div>
-              </div>
+              </Link>
             );
           })
         )

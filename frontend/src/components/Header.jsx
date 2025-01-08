@@ -52,7 +52,7 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className="hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2 bg-slate-200">
+          <div className="hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2 bg-slate-200 mr-40">
             <input
               type="text"
               placeholder="search product here..."
