@@ -9,6 +9,7 @@ import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
 import DisplayINRCurrency from "../helpers/displayCurrency";
 import VerticalCardProduct from "../components/VerticalCardProduct";
+import CategoryWiseProductDisplay from "../components/CategoryWiseProductDisplay";
 
 const ProductDetails = () => {
   const [data, setData] = useState({
@@ -82,7 +83,7 @@ const ProductDetails = () => {
       <div className="min-h-[200px] flex flex-col lg:flex-row gap-4">
         {/**product Image */}
         <div className="h-96 flex flex-col lg:flex-row-reverse gap-4">
-          <div className="h-[300px] w-[300px] lg:h-96 lg:w-96 bg-slate-200 rounded p-1 relative">
+          <div className="h-[300px] w-[300px] lg:h-96 lg:w-96 bg-slate-200 rounded p-2 relative">
             <img
               src={activeImage}
               className="h-full w-full object-scale-down mix-blend-multiply hover:cursor-pointer"
@@ -205,14 +206,14 @@ const ProductDetails = () => {
           </div>
         )}
           </div>
-          {/* {
+          {
               data.category && (
-                <VerticalCardProduct
+                <CategoryWiseProductDisplay
                 category={data?.category}
                 heading={"Recommended Product"}
               />
               )
-          } */}
+          }
           
     </div>
   );
