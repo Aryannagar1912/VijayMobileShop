@@ -1,6 +1,8 @@
 // const backendDomain = "http://localhost:8080";
 
-const backendDomain = "https://vijaymobileshop.onrender.com";
+// const backendDomain = "https://vijaymobileshop.onrender.com";
+const backendDomain = "https://vijaymobileshop-production.up.railway.app";
+
 // const backendDomain = "vijay-mobile-shop-backend.vercel.app"
 
 const SummaryApi = {
