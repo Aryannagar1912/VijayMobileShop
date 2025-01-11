@@ -15,7 +15,7 @@ const CategoryWiseProductDisplay = ({ category, heading }) => {
   const { fetchUserAddToCart } = useContext(Context)
 
   const handleAddToCart = async(e, id) => {
-    addToCart(e, id)
+    await addToCart(e, id)
     fetchUserAddToCart();
   }
 
