@@ -9,6 +9,7 @@ import AllUsers from "../pages/AllUsers";
 import AllProducts from "../pages/AllProducts";
 import CategoryProduct from "../pages/CategoryProduct";
 import ProductDetails from "../pages/ProductDetails";
+import Cart from "../pages/Cart";
 
 const router = createBrowserRouter([
   {
@@ -52,7 +53,11 @@ const router = createBrowserRouter([
       {
         path: "product/:id",   //2. add path now go to HorizontalCard file
         element : <ProductDetails />,
-      }
+      },
+      {
+        path: "cart",
+        element : <Cart />,
+      },
     ],
   },
 ]);
