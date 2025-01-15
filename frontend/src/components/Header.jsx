@@ -101,7 +101,7 @@ const Header = () => {
               )}
             </div>
 
-            {/* {user?._id && ( */}
+            {user?._id && (
               <Link to={"/cart"} className="text-2xl relative">
                 <span>
                   <FaShoppingCart />
@@ -110,7 +110,7 @@ const Header = () => {
                   <p className="text-sm">{context?.cartProductCount}</p>
                 </div>
               </Link>
-            {/* )} */}
+            )}
 
             <div>
               {user?._id ? (
