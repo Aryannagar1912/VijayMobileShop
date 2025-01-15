@@ -17,7 +17,7 @@ const Cart = () => {
                 "content-type" : "application/json"
             },
         })
-        // setLoading(false)
+        setLoading(false)
         const responseData = await response.json()
 
         if (responseData.success) {
