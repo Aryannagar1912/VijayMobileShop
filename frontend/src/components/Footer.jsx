@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-slate-200 text-black py-8">
+      <footer className="bg-white text-black pt-8 pb-4 invert">
         <div className="container mx-auto px-4 md:flex md:justify-between">
           {/* About Us Section */}
           <div className="mb-6 md:mb-0">
@@ -74,7 +74,7 @@ const Footer = () => {
           </div>
         </div>
         {/* footer bottom */}
-        <div className="bg-white border-t border-gray-600 mt-6 pb-4 pt-4 text-center">
+        <div className="bg-white border-t border-gray-600 mt-6 pt-4 text-center">
           <p className="text-xs">
             &copy; {new Date().getFullYear()} Vijay Mobile Shop & Accessories.
             All rights reserved.

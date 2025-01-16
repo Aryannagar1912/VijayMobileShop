@@ -70,7 +70,7 @@ const SignUp = () => {
 
   return (
     <section id="signup">
-      <div className="mx-auto container p-4">
+      <div className="mx-auto container p-4 invert">
         <div className="bg-white p-5 w-full max-w-sm mx-auto">
           <div className="w-20 h-20 mx-auto relative overflow-hidden rounded-full">
             <div>

@@ -36,12 +36,12 @@ const Header = () => {
   };
   return (
     <>
-      <header className="h-16 shadow-md bg-white fixed w-full z-40">
+      <header className="h-16 shadow-md bg-black fixed w-full z-40">
         <div className="h-full container mx-auto flex items-center px-2 justify-between">
           <div className="">
             <Link to={"/"}>
               <img
-                className=""
+                className="invert brightness-200"
                 src={logo}
                 alt="Logo"
                 style={{
@@ -54,13 +54,13 @@ const Header = () => {
             </Link>
           </div>
 
-          <div className="hidden lg:flex items-center w-full justify-between max-w-sm border rounded-full focus-within:shadow pl-2 bg-slate-200 mr-40">
+          <div className="hidden lg:flex items-center w-full justify-between max-w-sm rounded-full focus-within:shadow pl-2 bg-gray-900 mr-40">
             <input
               type="text"
               placeholder="search product here..."
-              className="w-full outline-none bg-slate-200"
+              className="w-full outline-none bg-gray-900 text-white placeholder-white ml-6"
             />
-            <div className="text-lg min-w-[50px] h-8 bg-red-600 flex items-center justify-center rounded-r-full text-white">
+            <div className="text-lg min-w-[50px] h-8 bg-white flex items-center justify-center rounded-r-full text-black">
               <GrSearch />
             </div>
           </div>
@@ -103,10 +103,10 @@ const Header = () => {
 
             {user?._id && (
               <Link to={"/cart"} className="text-2xl relative">
-                <span>
+                <span className="invert">
                   <FaShoppingCart />
                 </span>
-                <div className="bg-red-600 text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3">
+                <div className="bg-gray-900 text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-2 -right-3">
                   <p className="text-sm">{context?.cartProductCount}</p>
                 </div>
               </Link>
@@ -115,7 +115,7 @@ const Header = () => {
             <div>
               {user?._id ? (
                 <button
-                  className="px-3 py-1 rounded-full text-white bg-red-600 hover:bg-red-700"
+                  className="px-3 py-1 rounded-full text-white bg-gray-900 hover:bg-gray-950 focus:outline-none focus:ring focus:ring-gray-700 font-semibold transition duration-300"
                   onClick={handleLogout}
                 >
                   Logout
@@ -123,7 +123,7 @@ const Header = () => {
               ) : (
                 <Link
                   to={"/login"}
-                  className="px-3 py-1 rounded-full text-white bg-red-600 hover:bg-red-700"
+                  className="px-3 py-1 rounded-full text-white bg-gray-900 hover:bg-gray-950 focus:outline-none focus:ring focus:ring-gray-700 font-semibold transition duration-300"
                 >
                   Login
                 </Link>

@@ -83,7 +83,7 @@ const ProductDetails = () => {
       <div className="min-h-[200px] flex flex-col lg:flex-row gap-4">
         {/**product Image */}
         <div className="h-96 flex flex-col lg:flex-row-reverse gap-4">
-          <div className="h-[300px] w-[300px] lg:h-96 lg:w-96 bg-slate-200 rounded p-2 relative">
+          <div className="h-[300px] w-[300px] lg:h-96 lg:w-96 bg-white rounded p-2 relative">
             <img
               src={activeImage}
               className="h-full w-full object-scale-down mix-blend-multiply hover:cursor-pointer"
@@ -91,7 +91,7 @@ const ProductDetails = () => {
             />
             {/**image zoom */}
             {zoomImage && (
-              <div className="hidden lg:block absolute min-w-[500px] min-h-[400px] bg-slate-200 p-1 -right-[510px] top-0 overflow-hidden">
+              <div className="hidden lg:block absolute min-w-[500px] min-h-[400px] bg-white p-1 -right-[510px] top-0 overflow-hidden">
                 <div
                   className="w-full h-full min-h-[400px] min-w-[500px] mix-blend-multiply "
                   style={{
@@ -112,7 +112,7 @@ const ProductDetails = () => {
                 {productImageListLoading.map((el) => {
                   return (
                     <div
-                      className="h-20 w-20 bg-slate-200 rounded animate-pulse"
+                      className="h-20 w-20 bg-white rounded animate-pulse"
                       key={"loadingImage"}
                     ></div>
                   );
@@ -123,7 +123,7 @@ const ProductDetails = () => {
                 {data.productImage.map((imgURL, index) => {
                   return (
                     <div
-                      className="h-20 w-20 bg-slate-200 rounded p-1"
+                      className="h-20 w-20 bg-white rounded p-1"
                       key={imgURL}
                     >
                       <img
@@ -143,33 +143,33 @@ const ProductDetails = () => {
         {/**product details */}
         {loading ? (
           <div className="flex flex-col gap-1">
-            <p className="bg-slate-200 animate-pulse rounded-full inline-block px-48 py-3 w-fit"></p>
-            <h2 className="text-2xl lg:text-3xl font-medium h-16 bg-slate-200 animate-pulse"></h2>
-            <p className="capitialize text-slate-400 bg-slate-200 rounded-full animate-pulse w-fit px-24 py-3"></p>
+            <p className="bg-white animate-pulse rounded-full inline-block px-48 py-3 w-fit"></p>
+            <h2 className="text-2xl lg:text-3xl font-medium h-16 bg-white animate-pulse"></h2>
+            <p className="capitialize text-slate-400 bg-white rounded-full animate-pulse w-fit px-24 py-3"></p>
 
-            <div className="text-red-600 flex items-center gap-1 bg-slate-200 animate-pulse px-24 py-3 w-fit"></div>
+            <div className="text-red-600 flex items-center gap-1 bg-white animate-pulse px-24 py-3 w-fit"></div>
             <div className="flex items-center gap-2 text-2xl lg:text-3xl font-medium my-1 h-6 animate-pulse">
-              <p className=" bg-slate-200"></p>
-              <p className="text-slate-400 line-through bg-slate-200"></p>
+              <p className=" bg-white"></p>
+              <p className="text-white line-through bg-slate-200"></p>
             </div>
 
             <div className="flex items-center gap-3 my-2">
-              <button className="bg-slate-200 animate-pulse px-20 py-3 w-fit rounded-full"></button>
-              <button className="bg-slate-200 animate-pulse px-20 py-3 w-fit rounded-full"></button>
+              <button className="bg-white animate-pulse px-20 py-3 w-fit rounded-full"></button>
+              <button className="bg-white-200 animate-pulse px-20 py-3 w-fit rounded-full"></button>
             </div>
 
             <div>
-              <p className="text-slate-600 font-medium my-1 h-60 bg-slate-200 animate-pulse px-72 py-7 w-full"></p>
+              <p className="text-slate-600 font-medium my-1 h-60 bg-white animate-pulse px-72 py-7 w-full"></p>
               <p></p>
             </div>
           </div>
         ) : (
           <div className="flex flex-col gap-1">
-            <p className="bg-red-200 text-red-600 px-2 rounded-full inline-block w-fit">
+            <p className="bg-black text-red-600 px-2 rounded-full inline-block w-fit">
               {" "}
               {data?.brandName}
             </p>
-            <h2 className="text-2xl lg:text-3xl font-medium">
+            <h2 className="text-2xl lg:text-3xl font-medium text-white">
               {data?.productName}
             </h2>
             <p className="capitialize text-slate-400">{data?.category}</p>
@@ -191,17 +191,39 @@ const ProductDetails = () => {
             </div>
 
             <div className="flex items-center gap-3 my-2">
-              <button className="border-2 border-red-600 rounded px-3 py-1 min-w-[100px] text-red-600 font-medium hover:bg-red-600 hover:text-white">
+              {/* <button className="border-2 border-black rounded px-3 py-1 min-w-[100px] text-black font-medium hover:bg-black hover:text-white hover:border-white bg-white">
                 Buy
               </button>
-              <button className="border-2 border-red-600 rounded px-3 py-1 min-w-[100px] font-medium bg-red-600 text-white hover:bg-white hover:text-red-600">
+              <button className="border-2 border-white rounded px-3 py-1 min-w-[100px] font-medium text-white bg-black">
                 Add to Cart
-              </button>
+              </button> */}
+                {/* <button className="border-2 border-black rounded px-3 py-1 min-w-[100px] text-black font-medium hover:bg-black hover:text-white hover:border-white bg-white hover:shadow-lg hover:-translate-y-1 transition duration-300">
+  Buy
+</button>
+<button className="border-2 border-white rounded px-3 py-1 min-w-[100px] font-medium text-white bg-black hover:shadow-lg hover:-translate-y-1 transition duration-300">
+  Add to Cart
+</button> */}
+                {/* <button className="border rounded px-4 py-2 min-w-[120px] text-white bg-blue-600 font-medium hover:shadow-md hover:scale-105 transition duration-200">
+  Buy
+</button>
+<button className="border rounded px-4 py-2 min-w-[120px] text-blue-600 bg-white font-medium hover:shadow-md hover:scale-105 transition duration-200">
+  Add to Cart
+</button> */}
+                
+                <button className="border rounded px-4 py-2 min-w-[120px] text-white bg-black font-medium hover:shadow-lg hover:scale-105 transition duration-200">
+  Buy
+</button>
+<button className="border rounded px-4 py-2 min-w-[120px] text-black bg-white font-medium hover:shadow-lg hover:scale-105 transition duration-200">
+  Add to Cart
+</button>
+
+
+
             </div>
 
             <div>
-              <p className="text-slate-600 font-medium my-1">Description : </p>
-              <p>{data?.description}</p>
+              <p className="text-white font-medium my-1">Description : </p>
+                <p className="text-white">{data?.description}</p>
             </div>
           </div>
         )}

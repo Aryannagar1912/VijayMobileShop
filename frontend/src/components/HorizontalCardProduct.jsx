@@ -56,20 +56,20 @@ const HorizontalCardProduct = ({ category, heading }) => {
   };
   return (
     <div className="container mx-auto px-4 my-6 relative">
-      <h2 className="md:text-2xl font-semibold py-4">{heading}</h2>
+      <h2 className="md:text-2xl font-semibold py-4 text-white">{heading}</h2>
 
       <div
         className="flex items-center gap-4 md:gap-6 overflow-scroll scrollbar-none transition-all"
         ref={scrollElement}
       >
         <button
-          className="bg-white shadow-md rounded-full p-1 absolute left-0 text-lg hidden md:block"
+          className="bg-black text-white shadow-md rounded-full p-1 absolute left-0 text-lg hidden md:block"
           onClick={scrollLeft}
         >
           <FaAngleLeft />
         </button>
         <button
-          className="bg-white shadow-md rounded-full p-1 absolute right-0 text-lg hidden md:block"
+          className="bg-black text-white shadow-md rounded-full p-1 absolute right-0 text-lg hidden md:block"
           onClick={scrollRight}
         >
           <FaAngleRight />
@@ -106,15 +106,15 @@ const HorizontalCardProduct = ({ category, heading }) => {
           data.map((product, index) => {
             return (
               //3.change div to link and add to and pass the id to prev state, next step
-              <Link to={"product/"+product?._id} className="w-full min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] h-36 bg-white rounded-sm shadow flex">
-                <div className="bg-slate-200 h-full p-4 min-w-[120px] md:min-w-[145px]">
+              <Link to={"product/"+product?._id} className="w-full min-w-[280px] md:min-w-[320px] max-w-[280px] md:max-w-[320px] h-36 bg-black rounded-sm shadow flex">
+                <div className="bg-white h-full p-4 min-w-[120px] md:min-w-[145px]">
                   <img
                     src={product.productImage[0]}
                     className="object-scale-down h-full hover:scale-110 transition-all mix-blend-multiply"
                   />
                 </div>
                 <div className="p-4 grid">
-                  <h2 className="font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-black">
+                  <h2 className="font-medium text-base md:text-lg text-ellipsis line-clamp-1 text-white">
                     {product?.productName}{" "}
                   </h2>
                   <p className="text-slate-500">{product?.category}</p>
@@ -122,11 +122,11 @@ const HorizontalCardProduct = ({ category, heading }) => {
                     <p className="text-red-600 font-medium">
                       {displayCurrency(product?.sellingPrice)}
                     </p>
-                    <p className="text-slate-500 line-through">
+                    <p className="text-slate-500 line-through invert">
                       {displayCurrency(product?.price)}
                     </p>
                   </div>
-                  <button className="text-sm bg-red-600 hover:bg-red-700 text-white px-3 py-0.5 rounded-full" onClick={(e) => handleAddToCart(e, product?._id)}>
+                  <button className="text-sm bg-white text-black hover:text-white hover:bg-gray-950 px-3 py-0.5 rounded-full" onClick={(e) => handleAddToCart(e, product?._id)}>
                     Add to Cart
                   </button>
                 </div>

@@ -6,11 +6,11 @@ import VerticalCardProduct from "../components/VerticalCardProduct";
 const Home = () => {
   return (
     <>
-      <h2 className="relative text-center text-xl my-4">
-        <span className="absolute left-0 w-[38%] top-1/2 transform -translate-y-1/2 border-t-2 border-black"></span>
+      {/* <h2 className="relative text-center text-xl my-4 text-white">
+        <span className="absolute left-0 w-[38%] top-1/2 transform -translate-y-1/2 border-t-2 border-white"></span>
         EXPLORE OUR CATEGORIES
-        <span className="absolute right-0 w-[38%] top-1/2 transform -translate-y-1/2 border-t-2 border-black"></span>
-      </h2>
+        <span className="absolute right-0 w-[38%] top-1/2 transform -translate-y-1/2 border-t-2 border-white"></span>
+      </h2> */}
       <div>
         <CategoryList />
         <BannerProduct />

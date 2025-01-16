@@ -50,13 +50,13 @@ const BannerProduct = () => {
           <div className="flex justify-between w-full text-2xl">
             <button
               onClick={prevImage}
-              className="bg-white shadow-md rounded-full p-1"
+              className="bg-black text-white shadow-md rounded-full p-1"
             >
               <FaAngleLeft />
             </button>
             <button
               onClick={nextImage}
-              className="bg-white shadow-md rounded-full p-1"
+              className="bg-black text-white shadow-md rounded-full p-1"
             >
               <FaAngleRight />
             </button>
