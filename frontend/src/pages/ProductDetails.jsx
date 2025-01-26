@@ -2,14 +2,16 @@
 //after doing everything go to backend for data of that particular id by making a file getproductDetails in backend controller
 //then in last coming from common page here is we get tha product details
 
-import { useCallback, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useCallback, useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import SummaryApi from "../common";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
 import DisplayINRCurrency from "../helpers/displayCurrency";
 import VerticalCardProduct from "../components/VerticalCardProduct";
 import CategoryWiseProductDisplay from "../components/CategoryWiseProductDisplay";
+import addToCart from "../helpers/addToCart";
+import Context from "../context";
 
 const ProductDetails = () => {
   const [data, setData] = useState({
@@ -31,6 +33,10 @@ const ProductDetails = () => {
     y: 0,
   });
   const [zoomImage, setZoomImage] = useState(false);
+
+  const { fetchUserAddToCart } = useContext(Context)
+  
+  const navigate = useNavigate()
 
   const fetchProductDetails = async () => {
     setLoading(true);
@@ -78,6 +84,17 @@ const ProductDetails = () => {
   const handleZoomOutImage = () => {
     setZoomImage(false);
   };
+
+  const handleAddToCart = async(e, id) => {
+    await addToCart(e, id)
+    fetchUserAddToCart()
+  }
+
+  const handleBuyProduct = async (e, id) => {
+    await addToCart(e, id)
+    fetchUserAddToCart()
+    navigate("/cart")
+  }
   return (
     <div className="container mx-auto p-4">
       <div className="min-h-[200px] flex flex-col lg:flex-row gap-4">
@@ -110,11 +127,11 @@ const ProductDetails = () => {
           <div className="h-full">
             {loading ? (
               <div className="flex gap-2 lg:flex-col overflow-scroll scrollbar-none h-full">
-                {productImageListLoading.map((el) => {
+                {productImageListLoading.map((el, index) => {
                   return (
                     <div
                       className="h-20 w-20 bg-white rounded animate-pulse"
-                      key={"loadingImage"}
+                      key={"loadingImage"+index}
                     ></div>
                   );
                 })}
@@ -211,10 +228,10 @@ const ProductDetails = () => {
   Add to Cart
 </button> */}
 
-              <button className="border rounded px-4 py-2 min-w-[120px] text-white bg-black font-medium hover:shadow-lg hover:scale-105 transition duration-200">
+              <button className="border rounded px-4 py-2 min-w-[120px] text-white bg-black font-medium hover:shadow-lg hover:scale-105 transition duration-200" onClick={(e)=>handleBuyProduct(e, data?._id)}>
                 Buy
               </button>
-              <button className="border rounded px-4 py-2 min-w-[120px] text-black bg-white font-medium hover:shadow-lg hover:scale-105 transition duration-200">
+              <button className="border rounded px-4 py-2 min-w-[120px] text-black bg-white font-medium hover:shadow-lg hover:scale-105 transition duration-200" onClick={(e)=>handleAddToCart(e, data._id)}>
                 Add to Cart
               </button>
             </div>
