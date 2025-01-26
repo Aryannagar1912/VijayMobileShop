@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import SummaryApi from "../common";
 import { useEffect, useState } from "react";
-import ShowSearchedProduct from "../components/showSearchedProduct";
+import ShowSearchedProduct from "../components/ShowSearchedProduct";
 
 const SearchProduct = () => {
   const query = useLocation();
