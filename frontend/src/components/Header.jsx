@@ -2,7 +2,7 @@ import logo from "../assest/aryanLogo.png";
 import { GrSearch } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
 import { FaShoppingCart } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import SummaryApi from "../common";
 import { toast } from "react-toastify";
@@ -16,6 +16,9 @@ const Header = () => {
   const dispatch = useDispatch();
   const [menuDisplay, setMenuDisplay] = useState(false);
   const context = useContext(Context);
+  const navigate = useNavigate();
+  const searchInput = useLocation();
+  const [search, setSearch] = useState(searchInput?.search?.split("=")[1]);
 
   const handleLogout = async () => {
     const fetchData = await fetch(SummaryApi.logout_user.url, {
@@ -32,6 +35,17 @@ const Header = () => {
 
     if (data.error) {
       toast.error(data.message);
+    }
+  };
+
+  const handleSearch = (e) => {
+    const { value } = e.target;
+    setSearch(value);
+
+    if (value) {
+      navigate(`/search?q=${value}`);
+    } else {
+      navigate("/search");
     }
   };
   return (
@@ -59,6 +73,8 @@ const Header = () => {
               type="text"
               placeholder="search product here..."
               className="w-full outline-none bg-gray-900 text-white placeholder-white ml-6"
+              onChange={handleSearch}
+              value={search}
             />
             <div className="text-lg min-w-[50px] h-8 bg-white flex items-center justify-center rounded-r-full text-black">
               <GrSearch />

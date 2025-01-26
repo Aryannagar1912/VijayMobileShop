@@ -51,7 +51,7 @@ const ProductDetails = () => {
 
   useEffect(() => {
     fetchProductDetails();
-  }, []);
+  }, [params]);
 
   const handleMouseEnterProduct = (imgURL) => {
     setActiveImage(imgURL);
@@ -73,11 +73,11 @@ const ProductDetails = () => {
       });
     },
     [zoomImageCordinate]
-    );
-    
-    const handleZoomOutImage = () => {
-        setZoomImage(false)
-    }
+  );
+
+  const handleZoomOutImage = () => {
+    setZoomImage(false);
+  };
   return (
     <div className="container mx-auto p-4">
       <div className="min-h-[200px] flex flex-col lg:flex-row gap-4">
@@ -87,7 +87,8 @@ const ProductDetails = () => {
             <img
               src={activeImage}
               className="h-full w-full object-scale-down mix-blend-multiply hover:cursor-pointer"
-              onMouseMove={handleZoomImage} onMouseLeave={handleZoomOutImage}
+              onMouseMove={handleZoomImage}
+              onMouseLeave={handleZoomOutImage}
             />
             {/**image zoom */}
             {zoomImage && (
@@ -197,46 +198,40 @@ const ProductDetails = () => {
               <button className="border-2 border-white rounded px-3 py-1 min-w-[100px] font-medium text-white bg-black">
                 Add to Cart
               </button> */}
-                {/* <button className="border-2 border-black rounded px-3 py-1 min-w-[100px] text-black font-medium hover:bg-black hover:text-white hover:border-white bg-white hover:shadow-lg hover:-translate-y-1 transition duration-300">
+              {/* <button className="border-2 border-black rounded px-3 py-1 min-w-[100px] text-black font-medium hover:bg-black hover:text-white hover:border-white bg-white hover:shadow-lg hover:-translate-y-1 transition duration-300">
   Buy
 </button>
 <button className="border-2 border-white rounded px-3 py-1 min-w-[100px] font-medium text-white bg-black hover:shadow-lg hover:-translate-y-1 transition duration-300">
   Add to Cart
 </button> */}
-                {/* <button className="border rounded px-4 py-2 min-w-[120px] text-white bg-blue-600 font-medium hover:shadow-md hover:scale-105 transition duration-200">
+              {/* <button className="border rounded px-4 py-2 min-w-[120px] text-white bg-blue-600 font-medium hover:shadow-md hover:scale-105 transition duration-200">
   Buy
 </button>
 <button className="border rounded px-4 py-2 min-w-[120px] text-blue-600 bg-white font-medium hover:shadow-md hover:scale-105 transition duration-200">
   Add to Cart
 </button> */}
-                
-                <button className="border rounded px-4 py-2 min-w-[120px] text-white bg-black font-medium hover:shadow-lg hover:scale-105 transition duration-200">
-  Buy
-</button>
-<button className="border rounded px-4 py-2 min-w-[120px] text-black bg-white font-medium hover:shadow-lg hover:scale-105 transition duration-200">
-  Add to Cart
-</button>
 
-
-
+              <button className="border rounded px-4 py-2 min-w-[120px] text-white bg-black font-medium hover:shadow-lg hover:scale-105 transition duration-200">
+                Buy
+              </button>
+              <button className="border rounded px-4 py-2 min-w-[120px] text-black bg-white font-medium hover:shadow-lg hover:scale-105 transition duration-200">
+                Add to Cart
+              </button>
             </div>
 
             <div>
               <p className="text-white font-medium my-1">Description : </p>
-                <p className="text-white">{data?.description}</p>
+              <p className="text-white">{data?.description}</p>
             </div>
           </div>
         )}
-          </div>
-          {
-              data.category && (
-                <CategoryWiseProductDisplay
-                category={data?.category}
-                heading={"Recommended Product"}
-              />
-              )
-          }
-          
+      </div>
+      {data.category && (
+        <CategoryWiseProductDisplay
+          category={data?.category}
+          heading={"Recommended Product"}
+        />
+      )}
     </div>
   );
 };
