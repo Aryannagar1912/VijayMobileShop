@@ -108,7 +108,7 @@ const Cart = () => {
     }
 
     const handlePayment = async () => {
-        const stripePromise = await loadStripe("pk_test_51QzOlPFooVG8HRiUHSQ6W3yvr0pJL76zso3ObNbynCiUGHwVY0fcGKEDEBxu98BKu1ZFZCw0nBvJjZ19V59WWFYU00EDhWjTJP")
+        const stripePromise = await loadStripe(pk_test_51QzOlPFooVG8HRiUHSQ6W3yvr0pJL76zso3ObNbynCiUGHwVY0fcGKEDEBxu98BKu1ZFZCw0nBvJjZ19V59WWFYU00EDhWjTJP);
         const response = await fetch(SummaryApi.payment.url, {
             method: SummaryApi.payment.method,
             credentials: 'include', 
