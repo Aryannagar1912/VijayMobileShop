@@ -33,14 +33,6 @@ const HorizontalCardProduct = ({ category, heading }) => {
     fetchData();
   }, []);
 
-  // const scrollRight = () => {
-  //     scrollElement.current.scrollLeft += 300
-  // }
-
-  // const scrollLeft = () => {
-  //     scrollElement.current.scrollLeft -= 300
-  // }
-
   const scrollRight = () => {
     scrollElement.current.scrollTo({
       left: scrollElement.current.scrollLeft + 300,
@@ -142,3 +134,24 @@ const HorizontalCardProduct = ({ category, heading }) => {
 };
 
 export default HorizontalCardProduct;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
