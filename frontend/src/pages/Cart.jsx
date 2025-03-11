@@ -123,7 +123,7 @@ const Cart = () => {
         const responseData = await response.json()
 
         if (responseData?.id) {
-            stripePromise.redirectToCheckout({ sessionId : responseData.id })
+            await stripePromise.redirectToCheckout({ sessionId : responseData.id })
         }
     }
 
