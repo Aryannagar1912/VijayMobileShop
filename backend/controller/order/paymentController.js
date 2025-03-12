@@ -59,17 +59,4 @@ const paymentController = async(request,response)=>{
     }
 }
 
-module.exports = paymentController
-
-
-
-
-
-
-
-
-
-
-
-
-shr_1QzPXLFooVG8HRiU2lQnUo1M
+module.exports = paymentController;
