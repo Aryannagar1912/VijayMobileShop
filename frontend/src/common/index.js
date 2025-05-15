@@ -1,6 +1,6 @@
 // const backendDomain = "http://localhost:8080";
 
-const backendDomain = process.env.REACT_APP_BACKEND_URL;
+const backendDomain = "https://vijay-mobile-shop-wyyf.vercel.app";
 // const backendDomain = "https://vijaymobileshop-production.up.railway.app";
 
 // const backendDomain = "https://vijaymobileshop-production.up.railway.app"
