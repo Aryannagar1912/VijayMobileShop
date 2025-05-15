@@ -1,6 +1,6 @@
 // const backendDomain = "http://localhost:8080";
 
-const backendDomain = "https://vijaymobileshop.onrender.com";
+const backendDomain = process.env.React_APP_BACKEND_URL;
 // const backendDomain = "https://vijaymobileshop-production.up.railway.app";
 
 // const backendDomain = "https://vijaymobileshop-production.up.railway.app"
@@ -85,6 +85,10 @@ const SummaryApi = {
   payment: {
     url: `${backendDomain}/api/checkout`,
     method : "post"
+  },
+  getOrder: {
+    url: `${backendDomain}/api/order-list`,
+    method : "get"
   }
 };
 
