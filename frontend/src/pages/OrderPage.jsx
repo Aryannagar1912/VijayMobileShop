@@ -81,7 +81,7 @@ const OrderPage = () => {
                             </div>
                         </div>
 
-                      <div className='font-semibold ml-auto w-fit lg:text-lg'>
+                      <div className='font-semibold ml-auto w-fit lg:text-lg text-white'>
                         Total Amount : {item.totalAmount}
                       </div>
                    </div>
