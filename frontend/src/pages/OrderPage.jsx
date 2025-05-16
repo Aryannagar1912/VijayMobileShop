@@ -27,7 +27,7 @@ const OrderPage = () => {
     <div>
       {
          !data[0] && (
-          <p>No Order available</p>
+          <p className='text-white'>No Order available</p>
          )
       }
 
@@ -60,7 +60,7 @@ const OrderPage = () => {
                                 })
                               }
                             </div>
-                            <div className='flex flex-col gap-4 p-2 min-w-[300px]'>
+                            <div className='flex flex-col gap-4 p-2 min-w-[300px] text-white bg-black'>
                               <div>
                                   <div className='text-lg font-medium'>Payment Details : </div>
                                   <p className=' ml-1'>Payment method : {item.paymentDetails.payment_method_type[0]}</p>
