@@ -31,7 +31,7 @@ const OrderPage = () => {
          )
       }
 
-      <div className='p-4 w-full bg-white'>
+      <div className='p-4 w-full text-white'>
           {
             data.map((item,index)=>{
               return(
